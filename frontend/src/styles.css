@@ -1,0 +1,228 @@
+/* ===== Theme Variables ===== */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --card-bg: #f9f9f9;
+  --accent-color: #007bff;
+  --border-color: #ccc;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #eeeeee;
+  --card-bg: #1f1f1f;
+  --accent-color: #66aaff;
+  --border-color: #444;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Global ===== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--accent-color);
+}
+
+/* ===== App.jsx ===== */
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* ===== SearchBar.jsx ===== */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.search-input {
+  padding: 10px;
+  width: 300px;
+  font-size: 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.search-button {
+  padding: 10px 16px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.suggestions-list {
+  position: absolute;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-top: 4px;
+  width: 300px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  z-index: 999;
+}
+
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.suggestions-list li:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+
+/* ===== SentimentCard.jsx ===== */
+.sentiment-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 6px var(--shadow-color);
+}
+
+.insight {
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  background: var(--bg-color);
+  border-radius: 6px;
+  font-size: 1.1rem;
+  border-left: 5px solid var(--accent-color);
+}
+
+.timestamp {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.article-list {
+  list-style: none;
+  padding: 0;
+}
+
+.article-item {
+  margin-bottom: 1.25rem;
+}
+
+.article-item a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.article-item a:hover {
+  text-decoration: underline;
+}
+
+.summary-text {
+  margin: 0.25rem 0;
+}
+
+.article-sentiment {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* ===== HistoryTimeline.jsx ===== */
+.timeline-container {
+  margin-top: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-event {
+  display: flex;
+  align-items: flex-start;
+  border-left: 3px solid var(--border-color);
+  padding-left: 1rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.timeline-event::before {
+  content: "●";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  color: var(--border-color);
+}
+
+.timestamp {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin-right: 1rem;
+  min-width: 80px;
+}
+
+.content {
+  flex: 1;
+}
+
+.emoji {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+
+.source-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--accent-color);
+}
+
+.source-link:hover {
+  text-decoration: underline;
+}
+
+.emotion {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  margin-top: 0.25rem;
+}
